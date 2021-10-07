@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task-a2
+spec:
+  selector:
+    matchLabels:
+      run: task-a2
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: task-a2
+    spec:
+      containers:
+      - name: task-a2
+        image: nginx
+        ports:
+        - containerPort: 80
